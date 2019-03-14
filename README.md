@@ -9,4 +9,4 @@ I will look up a new way of doing it every year and post the result
 - *2016* [Leibniz' Infinite series](leibniz-pi.js)
 - *2017* [Machin's Formula](machin-pi.js)
 - *2018* [Chudnovsky's Formula](chudnovsky-pi.js)
-
+- *2019* [Nilakantha Series](nilakantha-pi.js)
