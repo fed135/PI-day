@@ -12,6 +12,7 @@
       color: #fee;
       line-height: 100px;
       letter-spacing: -10px;
+      text-align: justify;
     }
   </style>
 <head>
@@ -20,14 +21,14 @@
 <script type="module">
   import { calc } from './machin-pi.js';
   
-  let digits = 0;
+  let digits = 2;
   let speed = 2000;
   let maxSpeed = 100;
   
   function draw() {
     speed = Math.max(maxSpeed, speed * 0.8);
     setTimeout(draw, speed);
-    document.body.innerHTML = calc(++digits);
+    document.body.innerHTML = calc(++digits).substring(0, digits+2);
   }
   
   setTimeout(draw, speed);
