@@ -7,8 +7,6 @@
  * digits, which are not guaranteed to be exact, but are leftovers from the calculations.
  */
 
-'use asm';
-
 /* Local variables -----------------------------------------------------------*/
 
 // Math method cache
@@ -143,4 +141,4 @@ console.log(`${len} digits in ${(Date.now() - now)}ms`)
 
 /* Exports -------------------------------------------------------------------*/
 
-module.exports = { calc };
+export { calc };
