@@ -10,13 +10,15 @@
       font-family: sans-serif;
       background-color: #110;
       color: #fee;
+      line-height: 100px;
+      letter-spacing: -10px;
     }
   </style>
 <head>
 <body>
 3.14
 <script type="module">
-  import * as machin from './machin-pi.js';
+  import { calc } from './machin-pi.js';
   
   let digits = 0;
   let speed = 2000;
@@ -25,7 +27,7 @@
   function draw() {
     speed = Math.max(maxSpeed, speed * 0.8);
     setTimeout(draw, speed);
-    document.body.innerHTML = machin.calc(++digits);
+    document.body.innerHTML = calc(++digits);
   }
   
   setTimeout(draw, speed);
