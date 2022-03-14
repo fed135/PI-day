@@ -1,0 +1,13 @@
+<script>
+  import { calc } from './machin-pi.js';
+  
+  let digits = 0;
+  let speed = 2000;
+  let maxSpeed = 100;
+  
+  function draw() {
+    speed = Math.max(maxSpeed, speed * 0.8);
+    setTimeout(draw, speed);
+    document.body.innerHTML = calc(++digits);
+  }
+</script>
