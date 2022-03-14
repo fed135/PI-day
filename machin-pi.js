@@ -70,7 +70,7 @@ function multiply(n, aX, imult) {
 function divide(n, aX, iDiv, aY) {
   let carry = 0;
   for (let i = 0; i < n; i++) {
-    currVal = aX[i] + carry * base;
+    let currVal = aX[i] + carry * base;
     const theDiv = floor(currVal / iDiv);
     carry = currVal - theDiv * iDiv;
     aY[i] = theDiv;
