@@ -46,7 +46,6 @@
       border-radius: 16px;
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
       backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px);
       border: 1px solid rgba(255, 255, 255, 0.3);
       display: block;
       position:absolute;
@@ -55,6 +54,17 @@
       left: 10%;
       padding: 16px;
       font-size:1em;
+    }
+
+    #reset {
+      border: 0px;
+      padding: 3px;
+      border-radius: 4px;
+      background-color: white;
+      color: black;
+      padding-left: 10px;
+      padding-right: 10px;
+      float: right;
     }
       
   </style>
@@ -65,7 +75,7 @@
     <span id="decimals">14</span>
   </div>
   <div id="stats">
-      Computing PI digits using <a id="algo" href="./machin-pi.js">Machin</a>. <span id="num">2</span> digits computed.
+      Computing PI digits using <a id="algo" href="./machin-pi.js">Machin</a>'s formula. <span id="num">2</span> digits computed.
       <button id="reset" onclick="reset()">Reset</button>
   </div>
 <script type="module">
