@@ -1,34 +1,98 @@
 <html>
 <head>
   <title>Pi day madness!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0px;
       padding: 0px;
-      font-size: 120px;
       word-wrap: break-word;
-      font-family: sans-serif;
+      font-family: "Roboto Mono", monospace;
+      font-optical-sizing: auto;
+      font-weight: 700;
+      font-style: normal;
       background-color: #110;
       color: #fee;
-      line-height: 100px;
-      letter-spacing: -10px;
       text-align: justify;
+      min-height: 100vh;
+      width: 100%;
     }
+
+    #numbers {
+      background: linear-gradient(magenta, cyan, yellow, white);
+      display: block;
+      position: relative;
+      min-height: 100vh;
+      font-size:3em;
+      width: 100%;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    #nondecimal {
+      float: left;
+    }
+
+    #decimal {
+      position: relative;
+      display: block;
+      padding-left: 3em; 
+    }
+
+    #stats {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      display: block;
+      position:absolute;
+      width:80%;
+      bottom: 1em;
+      left: 10%;
+      padding: 16px;
+      font-size:1em;
+    }
+
+    #reset {
+      border: 0px;
+      padding: 3px;
+      border-radius: 4px;
+      background-color: white;
+      color: black;
+      padding-left: 10px;
+      padding-right: 10px;
+      float: right;
+    }
+      
   </style>
 <head>
 <body>
-3.14
+  <div id="numbers">
+    <span id="nondecimal">3.<br /></span>
+    <span id="decimals">14</span>
+  </div>
+  <div id="stats">
+      Computing PI digits using <a id="algo" href="./machin-pi.js">Machin</a>'s formula. <span id="num">2</span> digits computed.
+      <button id="reset" onclick="reset()">Reset</button>
+  </div>
 <script type="module">
   import { calc } from './machin-pi.js';
   
   let digits = 2;
-  let speed = 2000;
-  let maxSpeed = 100;
+  let speed = 500;
+  let maxSpeed = 16;
+
+  const decimals = document.getElementById('decimals');
+  const computed = document.getElementById('num');
   
   function draw() {
     speed = Math.max(maxSpeed, speed * 0.8);
     setTimeout(draw, speed);
-    document.body.innerHTML = calc(++digits).substring(0, digits+2);
+    decimals.innerHTML = calc(++digits).substring(0, digits+2);
+    computed.innerHTML = digits;
   }
   
   setTimeout(draw, speed);
