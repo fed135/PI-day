@@ -49,6 +49,10 @@
       backdrop-filter: blur(5px);
       -webkit-backdrop-filter: blur(5px);
       border: 1px solid rgba(255, 255, 255, 0.3);
+      display: block;
+      position:absolute;
+      width:80%;
+      bottom: 1em;
     }
       
   </style>
@@ -59,10 +63,8 @@
     <span id="decimals">14</span>
   </div>
   <div id="stats>
-    <div id="stats>
       Computing PI digits using <a id="algo" href="./machin-pi.js">Machin</a>. <span id="num">2</span> digits computed.
       <button id="reset" onclick="reset()">Reset</button>
-    </div>
   </div>
 <script type="module">
   import { calc } from './machin-pi.js';
