@@ -80,7 +80,7 @@
   </div>
   <div id="stats">
       Computing PI digits using <a id="algo" href="./machin-pi.js">Machin</a>'s formula. <span id="num">2</span> digits computed.
-      <button id="reset" onclick="reset()">Reset</button>
+      <button id="reset">Reset</button>
   </div>
 <script type="module">
   import { calc } from './machin-pi.js';
@@ -99,9 +99,10 @@
     computed.innerHTML = digits;
   }
 
-  function reset() {
+  document.getElementById("reset").addEventListener('click', () => {
     digits = 2;
-  }
+    speed = 500;
+  });
   
   setTimeout(draw, speed);
 </script>
