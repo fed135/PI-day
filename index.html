@@ -48,7 +48,7 @@
       backdrop-filter: blur(5px);
       border: 1px solid rgba(255, 255, 255, 0.3);
       display: block;
-      position:absolute;
+      position:fixed;
       width:80%;
       bottom: 1em;
       left: 10%;
@@ -65,6 +65,10 @@
       padding-left: 10px;
       padding-right: 10px;
       float: right;
+    }
+
+    #algo {
+      color: cyan;
     }
       
   </style>
@@ -91,8 +95,12 @@
   function draw() {
     speed = Math.max(maxSpeed, speed * 0.8);
     setTimeout(draw, speed);
-    decimals.innerHTML = calc(++digits).substring(0, digits+2);
+    decimals.innerHTML = calc(++digits).substring(2, digits+2);
     computed.innerHTML = digits;
+  }
+
+  function reset() {
+    digits = 2;
   }
   
   setTimeout(draw, speed);
